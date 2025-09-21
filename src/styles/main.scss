@@ -17,8 +17,9 @@ $cal-padding: 10px;
   flex-flow: row;
   flex-wrap: wrap;
   gap: $cal-gap;
-  padding: 10px;
-  max-width: 7 * $cal-size + 2 * $cal-padding + 6 * $cal-gap;
+  padding: $cal-padding;
+  max-width: calc(7 * #{$cal-size} + 6 * #{$cal-gap} + 2 * #{$cal-padding});
+  box-sizing: border-box;
 }
 
 .calendar__day {
@@ -31,6 +32,7 @@ $cal-padding: 10px;
   transition-duration: 0.5s;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 @for $i from 1 through 31 {
